@@ -514,19 +514,19 @@
                                             <div class="relative grid gap-6 px-5 py-6 bg-white sm:gap-8 sm:p-8">
                                                   
                                                     <a
-                                                        href=" gallery-Exterior-Painting "
-                                                        role="menuitem"
-                                                        class="block p-3 -m-3 transition rounded-md  focus:outline-none focus:ring-2 ring-primary ring-opacity-75 ring-offset-2 hover:bg-gray-50"
-                                                    >
-                                                        <p class="mt-1 text-sm text-gray-500">Exterior Painting</p>
-                                                    </a>
-                                                 
-                                                    <a
                                                         href=" gallery-Interior-Painting "
                                                         role="menuitem"
                                                         class="block p-3 -m-3 transition rounded-md  focus:outline-none focus:ring-2 ring-primary ring-opacity-75 ring-offset-2 hover:bg-gray-50"
                                                     >
                                                         <p class="mt-1 text-sm text-gray-500">Interior Painting</p>
+                                                    </a>
+                                                 
+                                                    <a
+                                                        href=" gallery-Exterior-Painting "
+                                                        role="menuitem"
+                                                        class="block p-3 -m-3 transition rounded-md  focus:outline-none focus:ring-2 ring-primary ring-opacity-75 ring-offset-2 hover:bg-gray-50"
+                                                    >
+                                                        <p class="mt-1 text-sm text-gray-500">Exterior Painting</p>
                                                     </a>
                                                  
                                                     <a
@@ -761,12 +761,12 @@
                                     >
                                         <div class="relative grid gap-6 px-5 py-2 bg-white rounded-lg">
                                             
-                                                <a href="gallery-Exterior-Painting" role="menuitem" class="block p-3 -m-3 transition rounded-md">
-                                                    <p class="mt-1 text-sm text-gray-500">Exterior Painting</p>
-                                                </a>
-                                            
                                                 <a href="gallery-Interior-Painting" role="menuitem" class="block p-3 -m-3 transition rounded-md">
                                                     <p class="mt-1 text-sm text-gray-500">Interior Painting</p>
+                                                </a>
+                                            
+                                                <a href="gallery-Exterior-Painting" role="menuitem" class="block p-3 -m-3 transition rounded-md">
+                                                    <p class="mt-1 text-sm text-gray-500">Exterior Painting</p>
                                                 </a>
                                             
                                                 <a href="gallery-All" role="menuitem" class="block p-3 -m-3 transition rounded-md">
@@ -877,10 +877,12 @@
 
 
 
+
+
 <section class="overflow-hidden bg-white">
     <div class="relative px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:py-24 lg:px-8">
         <h1>
-            <span class="block text-base font-semibold tracking-wide text-center uppercase text-secondary">Our Best Work</span>
+            <span class="block text-base font-semibold tracking-wide text-center uppercase text-secondary"> Our Best Work </span>
             <span class="block mt-2 text-3xl font-extrabold leading-8 tracking-tight text-center text-primary sm:text-4xl">Exterior Painting</span>
         </h1>
         <div class="relative mt-12">
@@ -1008,7 +1010,7 @@
                     <div class="relative h-16 px-6 bg-white">
                         <h2 class="sr-only" :id="$id('modal-title')">Modal Gallery</h2>
 
-                        <button @click="galleryModalOpen = false;" class="absolute p-1 transition rounded top-5 right-1 hover:bg-gray-100 focus-visible:ring-2 focus:outline-none ring-primary ring-opacity-75 ring-offset-2">
+                        <button id="close-modal-button" @click="galleryModalOpen = false; handleClick()" class="absolute p-1 transition rounded top-5 right-1 hover:bg-gray-100 focus-visible:ring-2 focus:outline-none ring-primary ring-opacity-75 ring-offset-2">
                             <span class="sr-only">Close modal</span>
                             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -1082,11 +1084,17 @@
     </template>
 </div>
 
+<script>
+    function handleClick() {
+        const videos = document.getElementsByClassName('gallery-modal-video')
+        for (let video of videos) {
+            video.muted = true
+        }
+    }
+</script>
         </div>
     </div>
 </section>
-
-
 
 
 
@@ -1127,7 +1135,7 @@
               
               <p class="text-base text-gray-100">
                   Kneeland Painting LLC<br/>
-                   
+                  
                       Rochester, MN <br/>
                   
                   +1 715-586-0800
@@ -1267,31 +1275,31 @@
                       <ul role="list" class="mt-4 -mx-1 space-y-4">
                         
                             <li class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75">
-                                Sun:  8:00am - 6:00pm 
+                                Sun:  closed 
                             </li>
                         
                             <li class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75">
-                                Mon:  8:00am - 6:00pm 
+                                Mon:  8:00am - 4:30pm 
                             </li>
                         
                             <li class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75">
-                                Tues:  8:00am - 6:00pm 
+                                Tues:  8:00am - 4:30pm 
                             </li>
                         
                             <li class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75">
-                                Wed:  8:00am - 6:00pm 
+                                Wed:  8:00am - 4:30pm 
                             </li>
                         
                             <li class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75">
-                                Thu:  8:00am - 6:00pm 
+                                Thu:  8:00am - 4:30pm 
                             </li>
                         
                             <li class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75">
-                                Fri:  8:00am - 6:00pm 
+                                Fri:  8:00am - 4:30pm 
                             </li>
                         
                             <li class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75">
-                                Sat:  8:00am - 6:00pm 
+                                Sat:  closed 
                             </li>
                         
                       </ul>
@@ -1452,35 +1460,35 @@
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-229179"
-                                                    name="229179"
+                                                    id="contact-service-255931"
+                                                    name="255931"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Interior Painting"
                                             />
-                                            <label for="contact-label-service-229179" class="ml-3 text-sm font-medium text-gray-700">Interior Painting</label>
+                                            <label for="contact-label-service-255931" class="ml-3 text-sm font-medium text-gray-700">Interior Painting</label>
                                         </div>
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-229180"
-                                                    name="229180"
+                                                    id="contact-service-255932"
+                                                    name="255932"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Exterior Painting"
                                             />
-                                            <label for="contact-label-service-229180" class="ml-3 text-sm font-medium text-gray-700">Exterior Painting</label>
+                                            <label for="contact-label-service-255932" class="ml-3 text-sm font-medium text-gray-700">Exterior Painting</label>
                                         </div>
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-229181"
-                                                    name="229181"
+                                                    id="contact-service-255933"
+                                                    name="255933"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Other Painting Services"
                                             />
-                                            <label for="contact-label-service-229181" class="ml-3 text-sm font-medium text-gray-700">Other Painting Services</label>
+                                            <label for="contact-label-service-255933" class="ml-3 text-sm font-medium text-gray-700">Other Painting Services</label>
                                         </div>
                                         
                                     </div>
@@ -1509,35 +1517,35 @@
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-229179"
-                                                    name="229179"
+                                                    id="contact-service-255931"
+                                                    name="255931"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Interior Painting"
                                             />
-                                            <label for="contact-label-service-229179" class="ml-3 text-sm font-medium text-gray-700">Interior Painting</label>
+                                            <label for="contact-label-service-255931" class="ml-3 text-sm font-medium text-gray-700">Interior Painting</label>
                                         </div>
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-229180"
-                                                    name="229180"
+                                                    id="contact-service-255932"
+                                                    name="255932"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Exterior Painting"
                                             />
-                                            <label for="contact-label-service-229180" class="ml-3 text-sm font-medium text-gray-700">Exterior Painting</label>
+                                            <label for="contact-label-service-255932" class="ml-3 text-sm font-medium text-gray-700">Exterior Painting</label>
                                         </div>
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-229181"
-                                                    name="229181"
+                                                    id="contact-service-255933"
+                                                    name="255933"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Other Painting Services"
                                             />
-                                            <label for="contact-label-service-229181" class="ml-3 text-sm font-medium text-gray-700">Other Painting Services</label>
+                                            <label for="contact-label-service-255933" class="ml-3 text-sm font-medium text-gray-700">Other Painting Services</label>
                                         </div>
                                         
                                     </div>
